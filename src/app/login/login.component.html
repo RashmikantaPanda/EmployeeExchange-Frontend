@@ -1,0 +1,31 @@
+
+<div class="container">
+    <div class="row" id="login">
+        <div class="col-md-5 mx-auto my-5">
+            <div class="card mb-2">
+                <h4 class="text-center card-header py-1 text-dark fw-bold">USER LOGIN</h4>
+            </div>
+            <div class="card bg-light fw-bold">
+                <div class="card-body">
+                    <form  #data="ngForm" (ngSubmit)="userLogin(data)" >
+                        <div class="row mb-3">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">User Email</label>
+                            <div class="col-sm-9 ">
+                                <input type="text" class="form-control" id="inputEmail3" name="email" ngModel required>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="inputPassword3" class="col-sm-3 col-form-label">Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="inputPassword3" ngModel name="password">
+                            </div>
+                        </div>
+                        <div class="text-center" id="signin-btn">
+                            <button type="submit" class="btn btn-outline-danger">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
