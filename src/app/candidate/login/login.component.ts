@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserService } from '../service/user.service';
+import { CandidateService } from 'src/app/service/candidate.service';
 
 @Component({
   selector: 'app-login',
@@ -7,12 +7,12 @@ import { UserService } from '../service/user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private userService:UserService){}
+  constructor(private candidateService: CandidateService) { }
 
-  userLogin(loginRequest:any){
+  userLogin(loginRequest: any) {
     console.log(loginRequest.value.email);
     console.log(loginRequest.value.password);
 
-    this.userService.login(loginRequest);
+    this.candidateService.login(loginRequest);
   }
 }

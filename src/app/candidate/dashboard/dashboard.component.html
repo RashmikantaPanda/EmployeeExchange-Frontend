@@ -1,0 +1,40 @@
+<div class="container overflow-hidden">
+    <div class="row gx-5 my-4">
+        <div class="col">
+            <div class="p-3 border bg-light">{{candidateData.firstName}}</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">{{candidateData.lastName}}</div>
+        </div>
+    </div>
+
+    <div class="row gx-5 my-4">
+        <div class="col">
+            <div class="p-3 border bg-light">{{candidateData.dateOfBirth}}</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">{{candidateData.mobile}}</div>
+        </div>
+    </div>
+
+    <div class="row gx-5 my-4" *ngFor="let c of candidateData.qualifications">
+        <div class="col-2">
+            <div class="p-3 border bg-light">{{c.standard}}</div>
+        </div>
+        <div class="col-4">
+            <div class="p-3 border bg-light">{{c.institution}}</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">{{c.stream}}</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">{{c.percentage}}</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">{{c.admissionYear}}</div>
+        </div>
+        <div class="col">
+            <div class="p-3 border bg-light">{{c.passoutYear}}</div>
+        </div>
+    </div>
+</div>
