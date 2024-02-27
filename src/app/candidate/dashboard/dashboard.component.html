@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <div class="row gx-5 my-4" *ngFor="let c of candidateData.qualifications">
+    <div class="row gx-5 my-4" *ngFor="let c of candidateData.qualifications | async">
         <div class="col-2">
             <div class="p-3 border bg-light">{{c.standard}}</div>
         </div>

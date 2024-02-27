@@ -8,6 +8,9 @@ import { HttpClientModule } from '@angular/common/http'
 import { CandidateModule } from './candidate/candidate.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AdminModule } from './admin/admin.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+   
 
   ],
   imports: [
@@ -22,7 +26,10 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     HttpClientModule,
     CandidateModule,
-  
+    AdminModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

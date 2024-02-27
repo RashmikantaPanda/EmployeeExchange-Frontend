@@ -1,1 +1,59 @@
-<p>dashboard works!</p>
+<div class="container">
+    <h4 class="text-center my-3">CANDIDATE DETAILS</h4>
+    <div class="table-responsive">
+        <table class="table table-primary ">
+            <thead>
+                <tr class="table-danger">
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let c of candidatesData; let i = index">
+                <tr>
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{c.firstName}} {{c.lastName}}</td>
+                    <td>{{c.email}}</td>
+                    <td>{{c.dateOfBirth}}</td>
+                    <td>{{c.mobile}}</td>
+                    <td>{{c.address.city}}</td>
+                    <td>{{c.address.state}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="container">
+    <h4 class="text-center my-3">EMPLOYER DETAILS</h4>
+    <div class="table-responsive">
+        <table class="table table-secondary ">
+            <thead>
+                <tr class="table-success">
+                    <th scope="col">#</th>
+                    <th scope="col">Organization Name</th>
+                    <th scope="col" colspan="2">Address</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">No Of Openings</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let c of employersData; let i = index">
+                <tr>
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{c.organizationName }}</td>
+                    <td>{{c.address.city}}</td>
+                    <td>{{c.address.state}}</td>
+                    <td>{{c.email}}</td>
+                    <td>{{c.jobs.length}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
