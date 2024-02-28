@@ -9,8 +9,15 @@ export class AdminService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
+  // For localhost
+
   baseUrlAdmin = 'http://localhost:8080/admin';
   baseUrlCandidate = 'http://localhost:8080/candidate';
+
+  // // For Diff Network
+
+  // baseUrlAdmin = 'http://172.20.10.14:8080/admin';
+  // baseUrlCandidate = 'http://172.20.10.14:8080/candidate';
 
 
   loginRequest = {

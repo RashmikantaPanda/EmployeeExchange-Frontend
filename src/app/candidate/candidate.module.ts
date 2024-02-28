@@ -7,13 +7,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
 import { RouterModule } from '@angular/router';
+import { JobsComponent } from './jobs/jobs.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     DashboardComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    JobsComponent
   ],
   imports: [
     CommonModule,

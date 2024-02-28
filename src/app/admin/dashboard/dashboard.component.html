@@ -38,7 +38,7 @@
                 <tr class="table-success">
                     <th scope="col">#</th>
                     <th scope="col">Organization Name</th>
-                    <th scope="col" colspan="2">Address</th>
+                    <th scope="col">Address</th>
                     <th scope="col">Email</th>
                     <th scope="col">No Of Openings</th>
                 </tr>
@@ -47,8 +47,7 @@
                 <tr>
                     <th scope="row">{{i+1}}</th>
                     <td>{{c.organizationName }}</td>
-                    <td>{{c.address.city}}</td>
-                    <td>{{c.address.state}}</td>
+                    <td>{{c.address.city}}, {{c.address.state}}</td>
                     <td>{{c.email}}</td>
                     <td>{{c.jobs.length}}</td>
 

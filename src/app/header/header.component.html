@@ -39,9 +39,9 @@
 
 
   <!-- app.component.html -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
   <div class="container-fluid mx-lg-5">
-    <a class="navbar-brand" routerLink="#"><h3>DEE</h3></a>
+    <a class="navbar-brand" routerLink="#">DEE</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -54,24 +54,36 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/about">About</a>
         </li>
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">Login </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="/login/candidate">Candidate</a></li>
-            <li><a class="dropdown-item" routerLink="/login/employer">Employer </a></li>
+            <li><a class="dropdown-item" routerLink="/candidate/login">Candidate</a></li>
+            <li><a class="dropdown-item" routerLink="/employer/login">Employer </a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" routerLink="/login/admin">Admin</a></li>
+            <li><a class="dropdown-item" routerLink="/admin/login">Admin</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" routerLink="/contact" tabindex="-1" aria-disabled="true">Contact</a>
         </li>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
       </form>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-item btn btn-success" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">Login </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/candidate/login">Candidate</a></li>
+            <li><a class="dropdown-item" routerLink="/employer/login">Employer </a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="/admin/login">Admin</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
