@@ -15,7 +15,7 @@ import { JobsComponent } from './jobs/jobs.component';
     LoginComponent,
     DashboardComponent,
     RegistrationComponent,
-    JobsComponent
+    JobsComponent,
   ],
   imports: [
     CommonModule,

@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AdminModule } from './admin/admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
+import { EmployerModule } from './employer/employer.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {MatSelectModule} from '@angular/material/select';
     HttpClientModule,
     CandidateModule,
     AdminModule,
+    EmployerModule,
     BrowserAnimationsModule,
     MatSelectModule,
     

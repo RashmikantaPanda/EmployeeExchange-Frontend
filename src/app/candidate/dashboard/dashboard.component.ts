@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private candidateService:CandidateService){}
   ngOnInit(){
-     this.candidateService.profile().subscribe((data:any)=>{
+     this.candidateService.dashboard().subscribe((data:any)=>{
       this.candidateData=data;
       localStorage.setItem("loggedInCandidate",data.id);
       console.log(this.candidateData)

@@ -1,5 +1,6 @@
-<div>
+<!-- <div>
     <div class="container">
+      <h2 class="text-center my-3 text-danger">AVAILABLE JOBS</h2>
       <table class="table my-5">
         <thead>
           <tr>
@@ -22,7 +23,6 @@
             <td>{{ job.noOfVacancy }}</td>
             <td>
               <button class="btn btn-primary" (click)="applyJob(job.jobId)">Apply</button>
-              <!-- <button class="btn btn-primary" >Apply</button> -->
 
             </td>
           </tr>
@@ -30,4 +30,27 @@
       </table>
     </div>
   </div>
-  
+   -->
+
+   <div>
+    <div class="container">
+      <h2 class="text-center my-3 text-danger">AVAILABLE JOBS</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let job of allJobs; let i = index">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ job.jobTitle }}</h5>
+              <p class="card-text">{{ job.description }}</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Location:</strong> {{ job.jobLocation }}</li>
+                <li class="list-group-item"><strong>Salary:</strong> {{ job.salary }}</li>
+                <li class="list-group-item"><strong>Vacancy:</strong> {{ job.noOfVacancy }}</li>
+              </ul>
+              <button class="btn btn-primary mt-3" (click)="applyJob(job.jobId)">Apply</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    

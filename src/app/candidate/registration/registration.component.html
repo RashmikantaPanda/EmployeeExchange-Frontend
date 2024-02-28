@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-7 mx-auto my-5">
         <div class="my-2 text-center text-bg-success py-1 ">
             <h3>REGISTRATION FORM</h3>
@@ -100,16 +100,15 @@
 
 
                     <div class="row d-flex">
-                        <h5 class="mt-5">Qualifications</h5>
-                        <div class="row d-flex"
-                            *ngFor="let qualification of qualificationForms.controls; let i = index">
+                        <h5 class="mt-5"><strong>Qualifications</strong></h5>
+                        <div class="row d-flex" *ngFor="let qualification of qualifications; let i = index">
                             <div class="col-md-4">
                                 <label for="validationCustom04" class="form-label">Standard</label>
                                 <select class="form-select" id="validationCustom04" required>
                                     <option>10th</option>
                                     <option>12th</option>
                                     <option>Diploma</option>
-                                    <option selected>+3</option>
+                                    <option>+3</option>
                                     <option>BTech</option>
                                     <option>PG</option>
                                     <option>Other</option>
@@ -119,11 +118,10 @@
                             <div class="col-md-4">
                                 <label for="validationCustom04" class="form-label">Board</label>
                                 <select class="form-select" id="validationCustom04" required>
-
                                     <option>BSE, ODISHA</option>
                                     <option>CHSE,ODISHA</option>
                                     <option>CBSE,DELHI</option>
-                                    <option selected>NCERT, DELHI</option>
+                                    <option>NCERT, DELHI</option>
                                     <option>Utkal Univerity</option>
                                     <option>BPUT,Rourkela</option>
 
@@ -145,16 +143,15 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <label for="validationCustom05" class="form-label">Admission Year</label>
-                                <input type="date" class="form-control" id="validationCustom05" required>
-
+                                <label for="admissionYear" class="form-label">Admission Year</label>
+                                <input type="number" class="form-control" id="admissionYear" min="1900" max="2100" step="1" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="validationCustom05" class="form-label">Passout Year</label>
-                                <input type="date" class="form-control" id="validationCustom05" required>
-
+                                <label for="passoutYear" class="form-label">Passout Year</label>
+                                <input type="number" class="form-control" id="passoutYear" min="1900" max="2100" step="1" required>
                             </div>
-                            <div class=>
+                            
+                            <div class="my-3">
                                 <span type="button" class="btn btn-danger"
                                     (click)="removeQualification(i)">Remove</span>
                             </div>
@@ -169,6 +166,193 @@
 
                     <div class="text-center">
                         <button class="btn btn-outline-success" type="submit">SignUp</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+<div class="row">
+    <div class="col-md-7 mx-auto my-5">
+        <div class="my-2 text-center text-bg-success py-1">
+            <h3>REGISTRATION FORM</h3>
+        </div>
+        <div class="card bg-body-secondary">
+            <div class="card-body">
+                <form #registrationForm="ngForm" class="row g-3 needs-validation mt-auto fs-6">
+                    <div class="col-md-6">
+                        <label for="validationCustom01" class="form-label">First name</label>
+                        <input type="text" class="form-control" id="validationCustom01" name="firstName"
+                            [(ngModel)]="firstName" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label">Last name</label>
+                        <input type="text" class="form-control" id="validationCustom02" name="lastName"
+                            [(ngModel)]="lastName" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="validationCustom03" name="email"
+                            [(ngModel)]="email" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="validationCustom03" name="password"
+                            [(ngModel)]="password" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid city.
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label">DOB</label>
+                        <input type="date" class="form-control" id="validationCustom03" name="dateOfBirth"
+                            [(ngModel)]="dateOfBirth" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label">Mobile</label>
+                        <input type="date" class="form-control" id="validationCustom03" name="mobile"
+                            [(ngModel)]="mobile" required>
+                    </div>
+                    <!-- <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label">Gender</label>
+                        <div class="form-control " id="gender">
+                            Male
+                            <input type="radio" class="" id="validationCustom0" name="gender" [(ngModel)]="gender"
+                                value="Male">
+                            Female
+                            <input type="radio" class="" id="validationCustom03" name="gender" [(ngModel)]="gender"
+                                value="Female">
+                            Other
+                            <input type="radio" class="" id="validationCustom03" name="gender" [(ngModel)]="gender"
+                                value="Other">
+                        </div>
+                    </div> -->
+
+                    <div class="col-md-3">
+                        <label for="validationCustom04" class="form-label">Country</label>
+                        <select class="form-select" id="validationCustom04" name="country" [(ngModel)]="country"
+                            required>
+                            <option>Australia</option>
+                            <option>England</option>
+                            <option>France</option>
+                            <option selected>India</option>
+                            <option>Israel</option>
+                            <option>Russia</option>
+                            <option>UnitedKingdom</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom04" class="form-label">State</label>
+                        <select class="form-select" id="validationCustom04" name="state" [(ngModel)]="state" required>
+                            <option>Andhra Pradesh</option>
+                            <option>Bihar</option>
+                            <option>Gujarat</option>
+                            <option selected>Odisha</option>
+                            <option>Rajasthan</option>
+                            <option>West Bengal</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom05" class="form-label">City</label>
+                        <input type="text" class="form-control" id="validationCustom05" name="city" [(ngModel)]="city"
+                            required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationCustom05" class="form-label">Pincode</label>
+                        <input type="number" class="form-control" id="validationCustom05" name="pincode"
+                            [(ngModel)]="pincode" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid zip.
+                        </div>
+                    </div>
+
+                    <div class="row d-flex">
+                        <h5 class="mt-5"><strong>Qualifications</strong></h5>
+                        <div class="row d-flex" *ngFor="let qualification of qualifications; let i = index">
+                            <div class="col-md-4">
+                                <label for="standard" class="form-label">Standard</label>
+                                <select class="form-select" id="standard" name="qualifications[i].standard"
+                                    [(ngModel)]="qualification.standard" required>
+                                    <option>10th</option>
+                                    <option>12th</option>
+                                    <option>Diploma</option>
+                                    <option>+3</option>
+                                    <option>BTech</option>
+                                    <option>PG</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="board" class="form-label">Board</label>
+                                <select class="form-select" id="board" name="qualifications[i].board"
+                                    [(ngModel)]="qualification.board" required>
+                                    <option>BSE, ODISHA</option>
+                                    <option>CHSE,ODISHA</option>
+                                    <option>CBSE,DELHI</option>
+                                    <option>NCERT, DELHI</option>
+                                    <option>Utkal Univerity</option>
+                                    <option>BPUT,Rourkela</option>
+                                    <option>Other</option>
+
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="institution" class="form-label">Institution Name</label>
+                                <input type="text" class="form-control" id="institution"
+                                    name="qualifications[i].institution" [(ngModel)]="qualification.institution"
+                                    required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="percentage" class="form-label">Percentage</label>
+                                <input type="number" class="form-control" id="percentage"
+                                    name="qualifications[i].percentage" [(ngModel)]="qualification.percentage" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid zip.
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="admissionYear" class="form-label">Admission Year</label>
+                                <input type="number" class="form-control" id="admissionYear"
+                                    name="qualifications[i].admissionYear" [(ngModel)]="qualification.admissionYear"
+                                    min="1900" max="2100" step="1" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="passoutYear" class="form-label">Passout Year</label>
+                                <input type="number" class="form-control" id="passoutYear"
+                                    name="qualifications[i].passoutYear" [(ngModel)]="qualification.passoutYear"
+                                    min="1900" max="2100" step="1" required>
+                            </div>
+
+                            <div class="my-3">
+                                <span type="button" class="btn btn-danger"
+                                    (click)="removeQualification(i)">Remove</span>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <button type="button" class="btn btn-success" (click)="addQualification()">Add
+                            Qualification</button>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-outline-success" type="submit" (click)="onSubmit()">SignUp</button>
                     </div>
                 </form>
             </div>

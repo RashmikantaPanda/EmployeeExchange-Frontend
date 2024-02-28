@@ -5,13 +5,14 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { AddEmployerComponent } from './add-employer/add-employer.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    AddEmployerComponent
   ],
   imports: [
     CommonModule,

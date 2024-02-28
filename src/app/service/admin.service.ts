@@ -20,6 +20,7 @@ export class AdminService {
   // baseUrlCandidate = 'http://172.20.10.14:8080/candidate';
 
 
+
   loginRequest = {
     email: '',
     password: ''
@@ -34,7 +35,7 @@ export class AdminService {
       (result: any) => {
         console.log("Login Success ")
         console.log("Token ," + result.token)
-        localStorage.setItem("token", result.token);
+        localStorage.setItem("admin_token", result.token);
         localStorage.setItem("loggedInAdmin", this.loginRequest.email);
         this.router.navigate(['/admin/dashboard'])
 
@@ -45,12 +46,23 @@ export class AdminService {
   }
 
   public getAllEmployee() {
-    let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('token')}`);
+    let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('admin_token')}`);
     return this.http.get(`${this.baseUrlAdmin}/employers/all`, { headers });
   }
 
   public getAllCandidate() {
-    let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('token')}`);
+    let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('admin_token')}`);
     return this.http.get(`${this.baseUrlAdmin}/candidates/all`, { headers });
   }
+
+  public addEmployer(data: any) {
+    let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('admin_token')}`);
+    this.http.post(`${this.baseUrlAdmin}/employer/register`, data, { headers }).subscribe(
+      (response: any) => {
+        console.log(response);
+        this.router.navigate(['/admin/dashboard']);
+      }
+    );
+  }
+
 }

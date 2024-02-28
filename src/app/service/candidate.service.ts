@@ -18,6 +18,12 @@ export class CandidateService {
   }
 
   data: any = {};
+   
+  registration(value: any) {
+    return this.http.post(`${this.baseUrlCandidate}/register`, value);
+  }
+
+
   login(data: any) {
     this.loginRequest.email = data.value.email;
     this.loginRequest.password = data.value.password;
@@ -25,8 +31,8 @@ export class CandidateService {
       (result: any) => {
         console.log("Login Success ")
         console.log("Token ," + result.token)
-        localStorage.setItem("token", result.token);
-        localStorage.setItem("loggedInUser", this.loginRequest.email);
+        localStorage.setItem("candidate_token", result.token);
+        localStorage.setItem("loggedInCandidate", this.loginRequest.email);
         this.router.navigate(['/candidate/dashboard'])
 
       }, (error: any) => {
@@ -35,26 +41,13 @@ export class CandidateService {
     );
   }
 
-  // profile() {
-  //   let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('token')}`);
-  //   this.http.get(`http://localhost:8080/candidate/email/${localStorage.getItem('loggedInUser')}`, { headers }).subscribe(
-  //     (result: any) => {
-  //       this.data=result;
-  //       console.log(this.data);
-  //     },
-  //     (error:any) => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
-
-  profile() {
-    let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('token')}`);
-    return this.http.get(`http://localhost:8080/candidate/email/${localStorage.getItem('loggedInUser')}`, { headers });
+  dashboard() {
+    let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('candidate_token')}`);
+    return this.http.get(`http://localhost:8080/candidate/email/${localStorage.getItem('loggedInCandidate')}`, { headers });
   }
 
   viewAllJobs() {
-    let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('token')}`);
+    let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('candidate_token')}`);
     return this.http.get(`${this.baseUrlCandidate}/job/available`, { headers });
   }
 
@@ -66,20 +59,17 @@ export class CandidateService {
 
 
   applyNewJob(job: any) {
-
     const loggedInCandidateString = localStorage.getItem('loggedInCandidate');
     if (loggedInCandidateString) {
       this.applyJobRequest.candidateId = parseInt(loggedInCandidateString);
       console.log("Candidate Id : " + this.applyJobRequest.candidateId);
     }
-
     console.log(this.applyJobRequest)
     console.log(job)
     this.applyJobRequest.jobId = job;
-    let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('token')}`);
+    let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('candidate_token')}`);
 
     return this.http.post(`${this.baseUrlCandidate}/job/apply`, this.applyJobRequest, { headers });
   }
-
 
 }
