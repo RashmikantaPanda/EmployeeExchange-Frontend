@@ -10,9 +10,6 @@ export class LoginComponent {
   constructor(private candidateService: CandidateService) { }
 
   userLogin(loginRequest: any) {
-    console.log(loginRequest.value.email);
-    console.log(loginRequest.value.password);
-
     this.candidateService.login(loginRequest);
   }
 }

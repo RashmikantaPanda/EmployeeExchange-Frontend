@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
 import { RouterModule } from '@angular/router';
 import { JobsComponent } from './jobs/jobs.component';
+import { AppliedJobComponent } from './applied-job/applied-job.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { JobsComponent } from './jobs/jobs.component';
     DashboardComponent,
     RegistrationComponent,
     JobsComponent,
+    AppliedJobComponent,
   ],
   imports: [
     CommonModule,

@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { JobsComponent } from './jobs/jobs.component';
+import { AppliedJobComponent } from './applied-job/applied-job.component';
 
 const routes: Routes = [
   {
@@ -11,7 +12,8 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'reigstration', component: RegistrationComponent },
-      {path:'viewJobs',component:JobsComponent}
+      {path:'viewJobs',component:JobsComponent},
+      {path:'appliedJobs',component:AppliedJobComponent}
     ]
   },
 ];

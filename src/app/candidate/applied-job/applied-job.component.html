@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <h2 class="text-center">Applied Jobs</h2>
+  
+    <div class="row mt-4">
+      <div *ngFor="let job of appliedJobs" class="col-md-6">
+        <div class="card mb-3">
+          <div class="card-body bg-light">
+            <p class="card-title"><strong>{{ job.jobTitle }}</strong></p>
+            <p class="card-text">Description: {{ job.description }}</p>
+            <p class="card-text">Job Type: {{ job.jobType }}</p>
+            <p class="card-text">Location: {{ job.jobLocation }}</p>
+            <p class="card-text">Salary: {{ job.salary }}</p>
+            <p class="card-text">Vacancy: {{ job.noOfVacancy }}</p>
+            <p class="card-text" *ngIf="job.status==true">Status:  Available</p>
+            <p class="card-text" *ngIf="job.status==false">Status:  Closed</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

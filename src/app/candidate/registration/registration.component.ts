@@ -69,7 +69,6 @@ export class RegistrationComponent {
     };
 
     console.log("Form DATA : " + formData);
-
     this.candidateService.registration(formData).subscribe((response: any) => {
       console.log('Registration successful!', response);
     });

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../service/auth.service';
 
 
 @Component({
@@ -9,4 +10,17 @@ import { FormsModule } from '@angular/forms';
 })
 export class HeaderComponent {
 
+  constructor(private authService: AuthService) {}
+
+  get isAuthenticated(): boolean {
+    return this.authService.getIsAuthenticated();
+  }
+
+  login() {
+    this.authService.login();
+  }
+
+  logout() {
+    this.authService.logout();
+  }
 }

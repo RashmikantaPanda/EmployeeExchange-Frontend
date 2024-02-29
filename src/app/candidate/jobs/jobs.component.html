@@ -1,56 +1,26 @@
-<!-- <div>
-    <div class="container">
-      <h2 class="text-center my-3 text-danger">AVAILABLE JOBS</h2>
-      <table class="table my-5">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Title</th>
-            <th scope="col">Description</th>
-            <th scope="col">Location</th>
-            <th scope="col">Salary</th>
-            <th scope="col">Vacancy</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let job of allJobs; let i = index">
-            <th scope="row">{{ i + 1 }}</th>
-            <td>{{ job.jobTitle }}</td>
-            <td>{{ job.description }}</td>
-            <td>{{ job.jobLocation }}</td>
-            <td>{{ job.salary }}</td>
-            <td>{{ job.noOfVacancy }}</td>
-            <td>
-              <button class="btn btn-primary" (click)="applyJob(job.jobId)">Apply</button>
+<div>
+  <div class="container">
+    <h2 class="text-center my-3 text-danger">AVAILABLE JOBS</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let job of allJobs; let i = index">
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title"><strong>{{ job.jobTitle }}</strong></p>
+            <p class="card-text">{{ job.description }}</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Location:</strong> {{ job.jobLocation }}</li>
+              <li class="list-group-item"><strong>Salary:</strong> {{ job.salary }}</li>
+              <li class="list-group-item"><strong>Vacancy:</strong><span class="badge bg-warning mx-1">{{
+                  job.noOfVacancy }}</span></li>
 
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-   -->
-
-   <div>
-    <div class="container">
-      <h2 class="text-center my-3 text-danger">AVAILABLE JOBS</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4" *ngFor="let job of allJobs; let i = index">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">{{ job.jobTitle }}</h5>
-              <p class="card-text">{{ job.description }}</p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item"><strong>Location:</strong> {{ job.jobLocation }}</li>
-                <li class="list-group-item"><strong>Salary:</strong> {{ job.salary }}</li>
-                <li class="list-group-item"><strong>Vacancy:</strong> {{ job.noOfVacancy }}</li>
-              </ul>
-              <button class="btn btn-primary mt-3" (click)="applyJob(job.jobId)">Apply</button>
-            </div>
+            </ul>
+            <!-- <button class="btn btn-primary mt-3" (click)="applyJob(job.jobId)">Apply</button> -->
+            <button class="btn btn-primary mt-3" [disabled]="isJobAlreadyApplied(job.jobId)" (click)="applyJob(job)">
+              Apply
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-    
+</div>

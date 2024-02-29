@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CandidateService } from 'src/app/service/candidate.service';
+import { JobService } from 'src/app/service/job.service';
 
 @Component({
   selector: 'app-jobs',
@@ -7,14 +8,19 @@ import { CandidateService } from 'src/app/service/candidate.service';
   styleUrls: ['./jobs.component.css']
 })
 export class JobsComponent {
-  constructor(private candidateService:CandidateService){}
+  constructor(private candidateService:CandidateService,private jobService: JobService){}
   allJobs:any={};
-
+  appliedJobs: any[] = []; 
+  
   ngOnInit(){
     this.candidateService.viewAllJobs().subscribe((data:any)=>{
       this.allJobs=data;
-      console.log("All Jobs : "+this.allJobs);
      });
+
+     this.jobService.getAppliedJobs().subscribe((data: any) => {
+      this.appliedJobs = data;
+      console.log(data);
+    });
   }
 
   
@@ -23,4 +29,9 @@ export class JobsComponent {
         console.log(data);
     })
   }
+
+  isJobAlreadyApplied(jobId: number): boolean {
+    return this.appliedJobs.some((appliedJob: any) => appliedJob.jobId === jobId);
+  }
+
 }

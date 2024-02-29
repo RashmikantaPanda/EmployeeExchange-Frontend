@@ -28,7 +28,7 @@ export class CreatejobComponent {
 
   addJob() {
     console.log(this.newJob.employer.id)
-    this.newJob.employer.id = Number(localStorage.getItem("employer_id")); 
+    this.newJob.employer.id = Number(localStorage.getItem("loggedInUserId")); 
     console.log(this.newJob.employer.id)
     this.employeerService.createJob(this.newJob).subscribe((response: any) => {
         console.log('Job added successfully!', response);

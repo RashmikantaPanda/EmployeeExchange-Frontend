@@ -14,9 +14,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(){
      this.candidateService.dashboard().subscribe((data:any)=>{
       this.candidateData=data;
-      localStorage.setItem("loggedInCandidate",data.id);
-      console.log(this.candidateData)
-
      });
   }
 
