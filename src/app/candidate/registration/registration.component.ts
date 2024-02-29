@@ -10,13 +10,11 @@ export class RegistrationComponent {
 
   constructor(private candidateService: CandidateService) { }
 
-
   firstName: string = '';
   lastName: string = '';
   email: string = '';
   password: string = '';
   dateOfBirth: string = '';
-  // gender: string = '';
   mobile: string = '';
   country: string = '';
   state: string = '';
@@ -46,8 +44,7 @@ export class RegistrationComponent {
       firstName: this.firstName,
       lastName: this.lastName,
       dateOfBirth: this.dateOfBirth,
-      // gender: this.gender,
-      moblile: this.mobile,
+      mobile: this.mobile,
       address: {
         street: 'A-55',
         city: this.city,
@@ -58,7 +55,7 @@ export class RegistrationComponent {
       qualifications: this.qualifications.map((qualification: any) => {
         return {
           standard: qualification.standard,
-          institution: qualification.institutionName,
+          institution: qualification.institution,
           stream: 'Science',
           board: qualification.board,
           percentage: qualification.percentage,
@@ -68,7 +65,7 @@ export class RegistrationComponent {
       })
     };
 
-    console.log("Form DATA : " + formData);
+    console.log("Form DATA : ", formData);
     this.candidateService.registration(formData).subscribe((response: any) => {
       console.log('Registration successful!', response);
     });
