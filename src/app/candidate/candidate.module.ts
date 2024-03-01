@@ -9,6 +9,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { RouterModule } from '@angular/router';
 import { JobsComponent } from './jobs/jobs.component';
 import { AppliedJobComponent } from './applied-job/applied-job.component';
+import { BackButtonDirective } from '../back-button.directive';
 
 
 @NgModule({
@@ -18,12 +19,14 @@ import { AppliedJobComponent } from './applied-job/applied-job.component';
     RegistrationComponent,
     JobsComponent,
     AppliedJobComponent,
+    BackButtonDirective
   ],
   imports: [
     CommonModule,
     CandidateRoutingModule,
     FormsModule,
-    RouterModule
-  ]
+    RouterModule,
+  ],
+
 })
 export class CandidateModule { }

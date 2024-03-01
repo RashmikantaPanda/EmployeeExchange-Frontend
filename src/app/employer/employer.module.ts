@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { CreatejobComponent } from './createjob/createjob.component';
 import { ViewApplicationsComponent } from './view-applications/view-applications.component';
 import { FormsModule } from '@angular/forms';
+// import { BackButtonDirective } from '../back-button.directive';
 
 
 @NgModule({
@@ -14,12 +15,14 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     LoginComponent,
     CreatejobComponent,
-    ViewApplicationsComponent
+    ViewApplicationsComponent,
+    // BackButtonDirective
   ],
   imports: [
     CommonModule,
     EmployerRoutingModule,
-    FormsModule
-  ]
+    FormsModule,
+  ],
+ 
 })
 export class EmployerModule { }

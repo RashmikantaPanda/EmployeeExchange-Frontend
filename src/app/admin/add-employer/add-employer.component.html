@@ -1,6 +1,9 @@
+<div class="mx-5 my-3">
+    <button backButton class="btn btn-primary">BACK</button>
+</div>
 <div class="row">
-    <div class="col-md-5 mx-auto my-5">
-        <div class="my-2 text-center text-bg-success py-1">
+    <div class="col-md-5 mx-auto">
+        <div class="text-center text-bg-success py-1">
             <h3>Add New Employer</h3>
         </div>
         <div class="card bg-body-secondary">
@@ -8,36 +11,44 @@
                 <form #employerForm="ngForm" (ngSubmit)="onSubmit()">
                     <div class="mb-3">
                         <label for="organizationName" class="form-label">Organization Name</label>
-                        <input type="text" class="form-control" id="organizationName" name="organizationName" [(ngModel)]="employer.organizationName" required>
+                        <input type="text" class="form-control" id="organizationName" name="organizationName"
+                            [(ngModel)]="employer.organizationName" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="employer.email" required>
+                        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="employer.email"
+                            required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="employer.password" required>
+                        <input type="password" class="form-control" id="password" name="password"
+                            [(ngModel)]="employer.password" required>
                     </div>
-                   
+
                     <div class="mb-3">
                         <label for="street" class="form-label">Street</label>
-                        <input type="text" class="form-control" id="street" name="street" [(ngModel)]="employer.address.street" required>
+                        <input type="text" class="form-control" id="street" name="street"
+                            [(ngModel)]="employer.address.street" required>
                     </div>
                     <div class="mb-3">
                         <label for="city" class="form-label">City</label>
-                        <input type="text" class="form-control" id="city" name="city" [(ngModel)]="employer.address.city" required>
+                        <input type="text" class="form-control" id="city" name="city"
+                            [(ngModel)]="employer.address.city" required>
                     </div>
                     <div class="mb-3">
                         <label for="state" class="form-label">State</label>
-                        <input type="text" class="form-control" id="state" name="state" [(ngModel)]="employer.address.state" required>
+                        <input type="text" class="form-control" id="state" name="state"
+                            [(ngModel)]="employer.address.state" required>
                     </div>
                     <div class="mb-3">
                         <label for="country" class="form-label">Country</label>
-                        <input type="text" class="form-control" id="country" name="country" [(ngModel)]="employer.address.country" required>
+                        <input type="text" class="form-control" id="country" name="country"
+                            [(ngModel)]="employer.address.country" required>
                     </div>
                     <div class="mb-3">
                         <label for="pincode" class="form-label">Pincode</label>
-                        <input type="text" class="form-control" id="pincode" name="pincode" [(ngModel)]="employer.address.pincode" required>
+                        <input type="text" class="form-control" id="pincode" name="pincode"
+                            [(ngModel)]="employer.address.pincode" required>
                     </div>
                     <div class="text-center">
                         <button type="submit" class="btn btn-outline-success">Add Employer</button>

@@ -1,5 +1,9 @@
 <div>
+  <div class="mx-5 my-3">
+    <button backButton xlass="btn btn-primary">BACK</button>
+  </div>
   <div class="container">
+
     <h2 class="text-center my-3 text-danger">AVAILABLE JOBS</h2>
     <div class="row">
       <div class="col-md-4 mb-4" *ngFor="let job of allJobs; let i = index">
@@ -14,10 +18,20 @@
                   job.noOfVacancy }}</span></li>
 
             </ul>
-            <!-- <button class="btn btn-primary mt-3" (click)="applyJob(job.jobId)">Apply</button> -->
-            <button class="btn btn-primary mt-3" [disabled]="isJobAlreadyApplied(job.jobId)" (click)="applyJob(job.jobId)">
+            <!-- <button class="btn btn-primary mt-3" [disabled]="isJobAlreadyApplied(job.jobId)"
+              (click)="applyJob(job.jobId)">
               Apply
-            </button>
+            </button> -->
+            <div *ngIf="isJobAlreadyApplied(job.jobId)">
+              <button class="btn btn-success mt-3" [disabled]="true">
+                Applied
+              </button>
+            </div>
+            <div *ngIf="!isJobAlreadyApplied(job.jobId)">
+              <button class="btn btn-primary mt-3">
+                Apply
+              </button>
+            </div>
           </div>
         </div>
       </div>

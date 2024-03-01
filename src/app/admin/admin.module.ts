@@ -12,7 +12,7 @@ import { AddEmployerComponent } from './add-employer/add-employer.component';
   declarations: [
     LoginComponent,
     DashboardComponent,
-    AddEmployerComponent
+    AddEmployerComponent,
   ],
   imports: [
     CommonModule,

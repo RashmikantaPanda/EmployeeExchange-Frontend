@@ -16,10 +16,14 @@
                         <strong>Address:</strong> {{ employer.address.street }}, {{ employer.address.city }}, {{
                         employer.address.state }}, {{ employer.address.country }} - {{ employer.address.pincode }}
                     </div>
+                    <hr>
+                    <div class="text-center mt-4">
+                        <button class="btn btn-success mx-5" routerLink="/employer/create/job">Add New Job</button>
+                        <button class="btn btn-warning mx-5" routerLink="#">View AppliedJobs</button>
 
+                    </div>
                     <hr>
                     <h4 class="mb-3">Jobs Posted</h4>
-
                     <ul class="list-group">
                         <li class="list-group-item my-2" *ngFor="let job of employer.jobs">
                             <div>
@@ -30,7 +34,7 @@
                                     </div>
                                     <div>
                                         <span class="badge bg-info">{{ job.status }}</span>
-                                        <span class="badge bg-success mx-3">  {{ job.noOfVacancy }}</span>
+                                        <span class="badge bg-success mx-3"> {{ job.noOfVacancy }}</span>
                                     </div>
                                 </div>
                                 <div class="mt-2">
@@ -41,9 +45,9 @@
                         </li>
                         <li *ngIf="employer.jobs.length === 0" class="list-group-item">No jobs posted yet.</li>
                     </ul>
-                    <div class="text-center mt-4">
+                    <!-- <div class="text-center mt-4">
                         <button class="btn btn-success" routerLink="/employer/create/job">Add Job</button>
-                      </div>
+                    </div> -->
                 </div>
             </div>
         </div>
