@@ -1,8 +1,39 @@
-
+<div class="mx-5 my-3">
+  <button backButton class="btn btn-primary">BACK</button>
+</div>
 <div class="container mt-4">
-  <div class="mx-5 my-3">
-    <button backButton class="btn btn-primary">BACK</button>
+  <h2 class="text-center">Applied Jobs</h2>
+
+  <div class="row mt-4">
+    <div *ngFor="let appJobs of appliedJobs" class="col-md-6">
+      <div class="card mb-3">
+        <div class="card-body bg-light">
+          <p class="card-title"><strong>{{ appJobs.job.jobTitle }}</strong></p>
+          <p class="card-text">Description: {{ appJobs.job.description }}</p>
+          <p class="card-text">Job Type: {{ appJobs.job.jobType }}</p>
+          <p class="card-text">Location: {{ appJobs.job.jobLocation }}</p>
+          <p class="card-text">Salary: {{ appJobs.job.salary }}</p>
+          <p class="card-text">Vacancy: {{ appJobs.job.noOfVacancy }}</p>
+          <p class="card-text" *ngIf="appJobs.job.status==true">Status: Available</p>
+          <div class="d-flex">
+            <p>Action :</p>
+            <p class="card-text text-danger badge " *ngIf="appJobs.isAccepted==false">Rejected <span class="mx-4 text-info">({{appJobs.rejectReason}})</span></p>
+            <p class="card-text text-primary badge" *ngIf="appJobs.isAccepted==null">Pending</p>
+            <p class="card-text text-success badge" *ngIf="appJobs.isAccepted==true">Selected <span class="px-3 text-danger ">Congratulations !!!</span></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+
+
+
+<!-- <div class="mx-5 my-3">
+  <button backButton class="btn btn-primary">BACK</button>
+</div>
+<div class="container mt-4">
     <h2 class="text-center">Applied Jobs</h2>
   
     <div class="row mt-4">
@@ -23,4 +54,4 @@
       </div>
     </div>
   </div>
-  
+   -->

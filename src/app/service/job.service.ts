@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 export class JobService {
 
     baseUrlCandidateJob = 'http://localhost:8080/candidate';
+    baseUrlEmployerJob = 'http://localhost:8080/employer';
+
 
     // baseUrlCandidateJob = 'http://172.20.10.14:8080/candidate';
 
@@ -18,6 +20,13 @@ export class JobService {
     let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('token')}`);
     const userId = localStorage.getItem('loggedInUserId'); 
     const url = `${this.baseUrlCandidateJob}/job/applied/${userId}`; 
+    return this.http.get<any[]>(url,{headers});
+  }
+
+  getAppliedJobsForEmployer():Observable<any[]>{
+    let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('token')}`);
+    const userId = localStorage.getItem('loggedInUserId'); 
+    const url = `${this.baseUrlEmployerJob}/view/appliedJob/${userId}`; 
     return this.http.get<any[]>(url,{headers});
   }
 }

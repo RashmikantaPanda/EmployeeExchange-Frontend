@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <h2 class="text-center">Applied Jobs</h2>
+
+    <div class="row mt-4">
+        <div *ngFor="let appliedJob of appliedJobs" class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body bg-light">
+                    <p class="card-title"><strong>{{ appliedJob.candidate.firstName | uppercase}} {{ appliedJob.candidate.lastName |uppercase }}</strong></p>
+                    <p class="card-text">Job Title: {{ appliedJob.job.jobTitle }}</p>
+                    <p class="card-text">Job Type: {{ appliedJob.job.jobType }}</p>
+                    <p class="card-text">Location: {{ appliedJob.job.jobLocation }}</p>
+                    <p class="card-text">Salary: {{ appliedJob.job.salary | currency}}</p>
+                    <p class="card-text">Applied Date: {{ appliedJob.appliedDate | date }}</p>
+
+                    <!-- Add buttons or actions for accepting/rejecting applications -->
+                    <button (click)="acceptApplication(appliedJob)" class="btn btn-success">Accept</button>
+                    <button (click)="rejectApplication(appliedJob)" class="btn btn-danger mx-5">Reject</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -25,6 +25,7 @@ export class JobsComponent {
       this.appliedJobs = data;
       console.log(data);
     });
+    
   }
 
   applyJob(job: any) {
@@ -35,7 +36,7 @@ export class JobsComponent {
 
   isJobAlreadyApplied(jobId: number): boolean {
     return this.appliedJobs.some(
-      (appliedJob: any) => appliedJob.jobId === jobId
+      (appliedJob: any) => appliedJob.job.jobId === jobId
     );
   }
 }

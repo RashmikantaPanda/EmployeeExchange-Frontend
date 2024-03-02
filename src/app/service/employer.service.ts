@@ -50,5 +50,12 @@ export class EmployerService {
     return this.http.post(`${this.baseUrlEmployer}/add/job`, newJob, { headers });
   }
 
+  updateAppliedJob(updateJob:any){
+    let headers = new HttpHeaders().set("Authorization", `Bearer ${localStorage.getItem('token')}`);
+     this.http.post(`${this.baseUrlEmployer}/update/appliedJob`, updateJob, { headers }).subscribe((data:any)=>{
+      console.log(data);
+     });
+  }
+
 
 }
